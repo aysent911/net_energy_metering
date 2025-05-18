@@ -1,0 +1,17 @@
+datasource db {
+    provider = "postgresql"
+    url = env("DATABASE_URL")
+}
+
+generator  client {
+    provider = "prisma-client-js"
+}
+
+model Energy {
+    id              String  @unique @db.VarChar(10)
+    timestamp       DateTime        @db.Timestamptz(3)
+    netEnergy       Float           @db.DoublePrecision
+    exportEnergy    Float           @db.DoublePrecision
+    importEnergy    Float           @db.DoublePrecision
+    apparentEnergy  Float           @db.DoublePrecision
+}
