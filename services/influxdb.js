@@ -13,6 +13,12 @@ let createPowersPoint = async function(data_point){
             .floatField('Qpv', data_point.Qpv)
             .floatField('Pgrid', data_point.Pgrid)
             .floatField('Qgrid', data_point.Qgrid)
+            .floatField('S', data_point.S)
+            .floatField('E', data_point.E)
+            .floatField('Eexp',data_point.Eexp)
+            .floatField('Eimp', data_point.Eimp)
+            .floatField('Ea', data_point.Ea)
+            .floatField('pf', data_point.pf)
             .timestamp(new Date(data_point.timestamp));
         influxClientWriteAPI.writePoint(point);
         //console.log(` ${point.toLineProtocol(influxClientWriteAPI)}`);
