@@ -7,6 +7,7 @@ The ESP32 net energy meter uses firmware integration to perform:
 ## Usage
 
 ### Configure
+Set connection parameters to API server
 
 ```
 idf.py menuconfig
